@@ -3,72 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <title>Fixed Image with Moving Text</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-    background-image: url('/images/grass.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
-
-    .glass-bubble {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  width: 20px;
-  height: 20px;
-  border-radius: 30%;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
-  transform: translate(-50%, -50%);
-  will-change: transform, width, height, border-radius, backdrop-filter;
-  transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, backdrop-filter 0.3s ease;
-}
-
-  .hover-target {
-    margin: 20px auto;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px 40px;
-    width: fit-content;
-    color: white;
-    font-size: 2em;
-    border-radius: 12px;
-    backdrop-filter: blur(0px);
-  }
-
-  .scroll-container {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-  }
-
-  .text-section {
-    scroll-snap-align: start;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-shadow: 0 0 10px rgba(0,0,0,0.75);
-    font-size: 3em;
-    padding: 20px;
-  }
-
-  /* Different text content background for readability */
-  #text1 {
-    background: rgba(0,0,0,0.3);
-  }
-  #text2 {
-    background: rgba(0,0,0,0.4);
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="scroll-container">
@@ -77,56 +12,14 @@
         Pursuit of Human Optimisation
       </div> 
     </div>
-    <div id="text2" class="text-section">Nature and Human Performance</div>
+    <div id="text2" class="text-section">
+      <div class="hover-target">
+        Bob the builder
+      </div> 
+    </div>
   </div>
 
-    <div class="glass-bubble"></div>
-<script>
-  const bubble = document.querySelector('.glass-bubble');
-  let mouseX = window.innerWidth / 2, mouseY = window.innerHeight / 2;
-  let bubbleX = mouseX, bubbleY = mouseY;
-
-  let isHover = false;
-
-  const easing = 0.1;
-
-  window.addEventListener('mousemove', e => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  });
-
- window.addEventListener('mousemove', e => {
-    let elem = document.elementFromPoint(e.clientX, e.clientY);
-    if (elem && elem.classList.contains('hover-target')) {
-      if (!isHover) {
-        isHover = true;
-        const rect = elem.getBoundingClientRect();
-        bubble.style.width = rect.width + 'px';
-        bubble.style.height = rect.height + 'px';
-        bubble.style.borderRadius = '12px';
-        bubble.style.backdropFilter = 'blur(0px)';
-      }
-    } else if (isHover) {
-      isHover = false;
-      bubble.style.width = '20px';
-      bubble.style.height = '20px';
-      bubble.style.borderRadius = '30%';
-      bubble.style.backdropFilter = 'blur(8px)';
-    }
-});
-
-  function animate() {
-    const distX = mouseX - bubbleX;
-    const distY = mouseY - bubbleY;
-    bubbleX += distX * easing;
-    bubbleY += distY * easing;
-
-    bubble.style.transform = `translate(${bubbleX}px, ${bubbleY}px) translate(-20%, -50%)`;
-
-    requestAnimationFrame(animate);
-  }
-
-  animate();
-</script>
+  <div class="glass-bubble"></div>
+<script src="script.js"></script>
 </body>
 </html>
