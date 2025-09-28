@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 
 html, body {
   margin: 0;
@@ -37,26 +38,26 @@ html, body {
   padding: 30px 100px;
   width: fit-content;
   color: white;
-  font-size: 2em;
   border-radius: 12px;
   backdrop-filter: blur(0px);
 }
 
 .scroll-container {
   height: 100vh;
+  width: 100vw;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
 
 .text-section {
   height: 100vh;
+  width: 100vw;
   scroll-snap-align: start;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-shadow: 0 0 10px rgba(0,0,0,0.75);
-  font-size: 3em;
   padding: 20px;
 }
 
@@ -67,8 +68,86 @@ html, body {
   background-position: center 30vh;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
   font-family: "League Script", cursive;
-  font-size: 30px
+  font-size: 3em;
 }
 #text2 {
-  background: rgb(73, 167, 109);
+  background: rgb(44, 99, 65);
+  /* font-size: 2em;
+  font-family: "Petit Formal Script", cursive;
+  font-weight: 400; */
+  font-style: normal;
+  flex-direction: column;
+}
+
+.us-text {
+  font-size: 2em;
+  font-family: "Petit Formal Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.button-container {
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30vh;
+}
+
+button {
+  font-family: 'Times New Roman', Times, serif;
+  position: relative;
+  height: 50px;
+  padding: 0 30px;
+  border: 2px solid rgb(44, 99, 65);
+  background: rgb(78, 175, 115);
+  user-select: none;
+  white-space: nowrap;
+  transition: all .05s linear;
+  font-family: inherit;
+}
+
+button:before, button:after {
+  content: "";
+  position: absolute;
+  background: rgb(78, 175, 115);
+  transition: all .2s linear;
+}
+
+button:before {
+  width: calc(100% + 6px);
+  height: calc(100% - 16px);
+  top: 8px;
+  left: -3px;
+}
+
+button:after {
+  width: calc(100% - 16px);
+  height: calc(100% + 6px);
+  top: -3px;
+  left: 8px;
+}
+
+button:hover {
+  cursor: crosshair;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:hover:before {
+  height: calc(100% - 32px);
+  top: 16px;
+}
+
+button:hover:after {
+  width: calc(100% - 32px);
+  left: 16px;
+}
+
+button span {
+  font-size: 15px;
+  z-index: 3;
+  position: relative;
+  font-weight: 600;
 }

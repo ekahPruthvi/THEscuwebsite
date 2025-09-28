@@ -26,7 +26,6 @@ function changeBackground() {
   current = (current + 1) % images.length;
 }
 
-// Combined event listener for mousemove
 window.addEventListener('mousemove', e => {
   mouseX = e.clientX;
   mouseY = e.clientY;
@@ -46,7 +45,7 @@ window.addEventListener('mousemove', e => {
         bubbleText.style.pointerEvents = 'none';
         bubbleText.style.fontFamily = " 'League Script', cursive";
         bubbleText.style.color = 'white';
-        bubbleText.style.fontSize = '3.2em';
+        bubbleText.style.fontSize = '2.2em';
         bubbleText.style.textAlign = 'center';
         bubbleText.style.position = 'relative';
         bubbleText.style.top = '50%';
@@ -74,6 +73,13 @@ function animate() {
   bubble.style.transform = `translate(${bubbleX}px, ${bubbleY}px) translate(-50%, -50%)`;
   requestAnimationFrame(animate);
 }
+
+setTimeout(() => {
+  const element = document.getElementById('text2');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}, 2000);
 
 setInterval(changeBackground, 200);
 changeBackground();
