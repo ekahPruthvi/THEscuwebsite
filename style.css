@@ -1,11 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow-x: hidden;
   font-family: Arial, sans-serif;
-  background-image: url('/images/bg.png');
-  background-size: cover;
+  background-image: url('/images/bg1.png');
+  background-color: rgb(0, 11, 48);
+  background-size: 90vh;
   background-position: center;
   background-attachment: fixed;
 }
@@ -17,52 +20,55 @@ html, body {
   pointer-events: none;
   width: 20px;
   height: 20px;
-  border-radius: 30%;
+  border-radius: 30%; 
   background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+  border-radius: 40px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  margin: 40px auto;
   transform: translate(-50%, -50%);
   will-change: transform, width, height, border-radius, backdrop-filter;
   transition: width 0.3s ease, height 0.3s ease, border-radius 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-  .hover-target {
-    margin: 20px auto;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px 40px;
-    width: fit-content;
-    color: white;
-    font-size: 2em;
-    border-radius: 12px;
-    backdrop-filter: blur(0px);
-  }
+.hover-target {
+  margin: 100px auto;
+  padding: 30px 100px;
+  width: fit-content;
+  color: white;
+  font-size: 2em;
+  border-radius: 12px;
+  backdrop-filter: blur(0px);
+}
 
-  .scroll-container {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-  }
+.scroll-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
 
-  .text-section {
-    height: 100vh;
-    scroll-snap-align: start;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-shadow: 0 0 10px rgba(0,0,0,0.75);
-    font-size: 3em;
-    padding: 20px;
-  }
+.text-section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.75);
+  font-size: 3em;
+  padding: 20px;
+}
 
-  /* Different text content background for readability */
-  #text1 {
-    background-image: url('/images/cerebrail.png');
-    background-size: 50% 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  #text2 {
-    background: rgba(0,0,0,0.4);
-  }
+#text1 {
+  background-image: url('/images/cerebrail.png');
+  background-size: 20vh auto;
+  background-repeat: no-repeat;
+  background-position: center 30vh;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+  font-family: "League Script", cursive;
+  font-size: 30px
+}
+#text2 {
+  background: rgb(73, 167, 109);
+}
