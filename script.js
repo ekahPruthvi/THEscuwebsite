@@ -21,6 +21,28 @@ const images = [
 ];
 let current = 0;
 
+const buttonContainer = document.querySelector('.button-container');
+const allButtons = buttonContainer.querySelectorAll('button');
+
+const urls = [
+  'locallink.html',   
+  'cynageos.html',   
+  'business/business.html',   
+  'contact.html'       
+];
+
+
+allButtons.forEach((btn, i) => btn.addEventListener('click', () => {
+  document.body.style.background = '#136dffff';
+  document.body.classList.add('border-effect');
+  buttonContainer.classList.add('header-mode');
+  allButtons.forEach(b => b.disabled = true);
+
+  setTimeout(() => {
+    window.location.href = urls[i];
+  }, 1200);
+}));
+
 function changeBackground() {
   bg.style.backgroundImage = `url('${images[current]}')`;
   current = (current + 1) % images.length;
@@ -80,6 +102,19 @@ setTimeout(() => {
     element.scrollIntoView({ behavior: 'smooth' });
   }
 }, 2000);
+
+const text2 = document.getElementById('text2');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      buttonContainer.classList.add('visible');
+    } else {
+      buttonContainer.classList.remove('visible');
+    }
+  });
+}, { threshold: 0.55 });
+
+if (text2) observer.observe(text2);
 
 setInterval(changeBackground, 200);
 changeBackground();
