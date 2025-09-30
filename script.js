@@ -39,6 +39,8 @@ allButtons.forEach((btn, i) => btn.addEventListener('click', () => {
   allButtons.forEach(b => b.disabled = true);
 
   setTimeout(() => {
+
+  allButtons.forEach(b => b.disabled = false);
     window.location.href = urls[i];
   }, 1200);
 }));

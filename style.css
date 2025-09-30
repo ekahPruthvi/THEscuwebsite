@@ -73,11 +73,9 @@ html, body {
 }
 #text2 {
   background: rgb(44, 99, 65);
-  /* font-size: 2em;
-  font-family: "Petit Formal Script", cursive;
-  font-weight: 400; */
   font-style: normal;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 .us-text {
@@ -92,14 +90,13 @@ html, body {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  left: 50%;
+  left: 50vw; /* horizontal center starting point */
   top: 70%;
   transform: translate(-50%, -50%);
-  display: flex;
   gap: 24px;
   transition:
-    top 1s cubic-bezier(.88,.03,.45,.9),
-    left 1s cubic-bezier(.88,.03,.45,.9),
+    top 0.6s cubic-bezier(.88,.03,.45,.9),
+    left 2s cubic-bezier(.88,.03,.45,.9),
     transform 1s cubic-bezier(.88,.03,.45,.9),
     width 1s cubic-bezier(.88,.03,.45,.9),
     opacity 0.4s;
@@ -142,22 +139,25 @@ button:active {
 
 .border-effect {
   box-sizing: border-box;
-  border: 15px solid #1963d9;
+  border: 1000px solid #1963d9;
   transition: border 0.7s cubic-bezier(.88,.03,.45,.9);
 }
 
 .button-container.header-mode {
-  top: 0;
-  left: 0;
-  width: 100vw;
-  transform: none;
   position: fixed;
+  top: 0;
+  left: 50%; /* keep horizontal center */
+  width: 100vw;
+  transform: translateX(-50%); /* horizontal centering */
   justify-content: center;
   align-items: center;
   padding: 18px 0 7px 0;
-  background: #1963d9;
-  z-index: 999;
+  /* background: #1963d9; */
+  border-radius: 10px;
   box-shadow: 0 2px 16px rgba(10,40,99,0.10);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 999;
 }
 
 .page-header {
@@ -217,7 +217,7 @@ button:active {
   cursor: default;
 }
 .panel.active.featured{
-  flex-basis: 3vw;
+  flex-basis: 70vw;
 }
 .panel-inner {
   padding: 2.7em 2.7em 1.4em 2.7em;
@@ -243,8 +243,8 @@ button:active {
   right: 2em;
   font-size: 2.3em;
   font-weight: 600;
-  opacity: 0.74;
-  color: #b8a55c;
+  color: #ffcc00;
+  text-shadow: #222;
 }
 .img-box {
   height: 30vh;
@@ -256,7 +256,6 @@ button:active {
   height: 100%;
   object-fit:contain;
   border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.333);
 }
 .desc-primary {
   font-size: 2.1em;
@@ -282,8 +281,6 @@ button:active {
   color: #fff8c1;
   opacity: 1.0;
 }
-
-/* Yellow featured panel */
 .panel.featured {
   background: #fbff00;
   color: #222;
