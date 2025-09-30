@@ -110,7 +110,7 @@ html, body {
   pointer-events: auto;
 }
 
-button {
+button:not(.gallery-arrow) {
   font-family: inherit;
   border: none;
   outline: 1px dotted rgb(37, 37, 37);
@@ -129,7 +129,7 @@ button {
   width: 180px;
 }
 
-button:active {
+button:active:not(.gallery-arrow) {
   box-shadow:
     inset -1px -1px #fff,
     inset 1px 1px #292929,
@@ -266,12 +266,15 @@ button:active {
   margin-bottom: 7px;
 }
 .desc-secondary {
-  font-size: 1.03em;
-  color: #ad995a;
+  margin-top: 3px;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #000000;
   margin-bottom: 1.9em;
 }
 .mini-link {
   color: #b8a55c;
+  text-decoration: none;
   opacity: 0.73;
   display: inline-block;
   margin-bottom: 0.9em;
@@ -280,6 +283,8 @@ button:active {
 .mini-link:hover {
   color: #fff8c1;
   opacity: 1.0;
+  text-decoration: underline;
+  font-style: italic;
 }
 .panel.featured {
   background: #fbff00;
@@ -298,4 +303,20 @@ button:active {
 @media (max-width: 900px) {
   .panel-row { padding: 0; }
   .panel-inner { padding: 1em 1em;}
+}
+
+.image-gallery {
+  position: relative;
+  width: 100%;
+  margin-top: 1.5em;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.gallery-img {
+  width: 100%;
+  object-fit:contain;
+  border-radius: 8px;
+  display: block;
 }
