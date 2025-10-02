@@ -139,7 +139,7 @@ button:active:not(.gallery-arrow) {
 
 .border-effect {
   box-sizing: border-box;
-  border: 1000px solid #1963d9;
+  border: 1000px solid #004f9f;
   transition: border 0.7s cubic-bezier(.88,.03,.45,.9);
 }
 
@@ -175,7 +175,7 @@ button:active:not(.gallery-arrow) {
   justify-content: center;
   align-items: center;
   padding: 18px 0 7px 0;
-  background: #1963d9;
+  background: #001455;
   z-index: 999;
 }
 
@@ -192,7 +192,7 @@ button:active:not(.gallery-arrow) {
   gap: 0;
 }
 .panel {
-  background: #1963d9;
+  background: #004f9f;
   color: #b8a55c;
   flex: 1 1 0;
   min-width: 0;
@@ -268,7 +268,7 @@ button:active:not(.gallery-arrow) {
 .desc-secondary {
   margin-top: 3px;
   font-size: 1.5em;
-  font-weight: 600;
+  /* font-weight: 600; */
   color: #000000;
   margin-bottom: 1.9em;
 }
