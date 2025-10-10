@@ -201,7 +201,7 @@ button:active:not(.gallery-arrow) {
   margin: 0 2px;
   overflow: hidden;
   transition: flex-basis 0.7s cubic-bezier(.85,0,.17,1), filter 0.3s;
-  border: 3px solid #fbff00;
+  border: 1px solid #fbff00;
   position: relative;
   cursor: pointer;
 }

@@ -201,7 +201,7 @@ button:active:not(.gallery-arrow) {
   margin: 0 2px;
   overflow: hidden;
   transition: flex-basis 0.7s cubic-bezier(.85,0,.17,1), filter 0.3s;
-  border: 3px solid #fbff00;
+  border: 1px solid #fbff00;
   position: relative;
   cursor: pointer;
 }
@@ -236,6 +236,7 @@ button:active:not(.gallery-arrow) {
   font-weight: 700;
   margin-bottom: 8px;
   color: #b8a55c;
+  font-family: "Petit Formal Script", cursive;
 }
 .panel-number {
   position: absolute;
@@ -245,6 +246,7 @@ button:active:not(.gallery-arrow) {
   font-weight: 600;
   color: #ffcc00;
   text-shadow: #222;
+  font-family: "Petit Formal Script", cursive;
 }
 .img-box {
   height: 30vh;
@@ -287,9 +289,9 @@ button:active:not(.gallery-arrow) {
   font-style: italic;
 }
 .panel.featured {
-  background: #fbff00;
+  background: #fdff92;
   color: #222;
-  border: 1.9px solid #cab263;
+  border: 1.9px solid #fbff00;
 }
 .panel.featured .panel-inner {
   color: #333;
