@@ -98,13 +98,6 @@ function animate() {
   requestAnimationFrame(animate);
 }
 
-setTimeout(() => {
-  const element = document.getElementById('text2');
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-}, 2000);
-
 const text2 = document.getElementById('text2');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -124,4 +117,10 @@ animate();
 
 window.addEventListener('load', function() {
   this.document.getElementById('load').style.visibility = 'hidden';
+  setTimeout(() => {
+    const element = document.getElementById('text2');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, 2000);
 });
