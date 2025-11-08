@@ -121,3 +121,7 @@ if (text2) observer.observe(text2);
 setInterval(changeBackground, 200);
 changeBackground();
 animate();
+
+window.addEventListener('load', function() {
+  this.document.getElementById('load').style.visibility = 'hidden';
+});
