@@ -62,6 +62,18 @@ html, body {
   padding: 20px;
 }
 
+.loader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  z-index: 9999999;
+  color: beige;
+  padding: 50%;
+}
+
 #text1 {
   background-image: url('/images/cerebrail.png');
   background-size: 20vh auto;
@@ -236,6 +248,7 @@ button:active:not(.gallery-arrow) {
   font-weight: 700;
   margin-bottom: 8px;
   color: #b8a55c;
+  font-family: "Petit Formal Script", cursive;
 }
 .panel-number {
   position: absolute;
@@ -245,6 +258,7 @@ button:active:not(.gallery-arrow) {
   font-weight: 600;
   color: #ffcc00;
   text-shadow: #222;
+  font-family: "Petit Formal Script", cursive;
 }
 .img-box {
   height: 30vh;
@@ -287,9 +301,9 @@ button:active:not(.gallery-arrow) {
   font-style: italic;
 }
 .panel.featured {
-  background: #fbff00;
+  background: #fdff92;
   color: #222;
-  border: 1.9px solid #cab263;
+  border: 1.9px solid #fbff00;
 }
 .panel.featured .panel-inner {
   color: #333;
