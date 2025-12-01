@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Business Tools and Services</title>
+  <title>Quote</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="stylesheet" href="/./style.css"
     media="(orientation: landscape)">
@@ -14,12 +14,19 @@
   <link rel="icon" type="image/x-icon" href="/images/logo/SCUfavicon.svg">
   <style>
     body {
-      background: #004f9f;
+      /* background: #004f9f; */
       margin: 0;
       padding: 0;
       height: 100vh;
       font-family: 'Inter', Arial, sans-serif;
       overflow: hidden;
+      --color1: #00366b;
+      --color2: #004080;
+      background-color: var(--color1);
+      background-image: linear-gradient(45deg, var(--color2) 25%, transparent 25%, transparent 75%, var(--color2) 75%, var(--color2)), 
+                        linear-gradient(45deg, var(--color2) 25%, var(--color1) 25%, var(--color1) 75%, var(--color2) 75%, var(--color2));
+      background-size: 60px 60px;
+      background-position: 0 0, 30px 30px;
     }
   </style>
 </head>
@@ -46,62 +53,7 @@
     </span>
   </button>
 </div>
-<div class="panel-row">
-  <!-- <div class="panel" id="panel1">
-    <span class="panel-number">02</span>
-    <div class="panel-inner">
-      <div class="mini-link">website?</div>
-      <div class="desc-primary">Bob The Buildee can build it </div>
-      <div class="desc-secondary">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem, quidem itaque repellat assumenda at quasi magnam quo explicabo deserunt cumque obcaecati totam ex eum quam animi facilis perferendis eveniet tempore! </div>
-      <div class="mini-link">LIGHT EFFECT</div>
-    </div>
-  </div> -->
-  <div class="panel" id="panel1">
-    <span class="panel-number">01</span>
-    <div class="panel-inner">
-      <div class="panel-title">Quote</div>
-      <div class="desc-primary">
-        <div class="image-gallery">
-          <img src="/images/q/quote1.png" alt="Gallery Image" class="gallery-img" />
-        </div>
-      </div>
-      <p style="font-size: 1.3em;font-weight: 600; font-family: 'Petit Formal Script', cursive;">
-        Handle all of your customers databases with <i>ease</i>.
-      </p>
-      <div class="image-gallery">
-        <img src="/images/q/quote2.png" alt="Gallery Image" class="gallery-img" />
-      </div>
-      <p style="font-size: 1.3em;justify-self:end;font-weight: 600; font-family: 'Petit Formal Script', cursive;">
-        Automate billing and quotations like a <i>professional</i>
-      </p>
-      <div class="image-gallery">
-        <img src="/images/q/quote3.png" alt="Gallery Image" class="gallery-img" />
-      </div>
-      <p style="font-size: 1.3em;font-weight: 600;font-family: 'Petit Formal Script', cursive;">
-        Personalize it to your preference,
-        <a style="font-size: 1.2em;color: black;font-weight: 600;margin-top: 5px;" class="mini-link" href="#">
-          Get Quote.
-        </a>
-      </p>
-    </div>
-  </div>
-  <div class="panel featured active" id="panel2">
-    <div class="panel-inner">
-      <div class="img-box"><img src="/images/logo/sculogo.svg" alt="The Stertorus Cerebral Unit"></div>
-      <div class="desc-secondary" style="font-family: 'Bitcount Prop Double', system-ui;font-size:1.3em;margin-bottom:2.2em;color: #000;">
-        At <i>The Stertorus Cerebral Unit</i> we design to inspire. <br>
-        Building tools for <i>your</i> business, which are not only funtional and simple to use but also very powerfull. 
-        <p style="font-size: 1.2em;">
-          <i><- Check our catalog of business tools.</i>
-        </p>
-      </div>
-      <a class="mini-link" href="#">
-        Get in Touch with us,<br>
-        give us an opportunity to help you.
-      </a>
-    </div>
-  </div>
-</div>
+
 <script src="/business/script.js"></script>
 </body>
 </html>

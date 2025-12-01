@@ -35,7 +35,6 @@ const urls = [
 allButtons.forEach((btn, i) => btn.addEventListener('click', () => {
   document.body.style.background = '#136dffff';
   document.body.classList.add('border-effect');
-  buttonContainer.classList.add('header-mode');
   allButtons.forEach(b => b.disabled = true);
 
   setTimeout(() => {
@@ -65,7 +64,7 @@ window.addEventListener('mousemove', e => {
       bubble.style.backdropFilter = 'blur(20px)';
 
       showTextTimeout = setTimeout(() => {
-        bubbleText.textContent = elem.textContent.trim();
+        bubbleText.textContent = "- The Stertorus Cerebral Unit";
         bubbleText.style.pointerEvents = 'none';
         bubbleText.style.fontFamily = " 'League Script', cursive";
         bubbleText.style.color = 'white';

@@ -86,7 +86,7 @@ html, body {
   position: absolute;
   width: 10vw;
   top: -35px;
-  right: -20px;
+  right: -55px;
 }
 
 .bottom-flower{
@@ -189,26 +189,12 @@ button:active:not(.gallery-arrow) {
 
 .border-effect {
   box-sizing: border-box;
-  border: 1000px solid #004f9f;
+  border: 1000px solid #00305f;
   transition: border 0.7s cubic-bezier(.88,.03,.45,.9);
 }
 
-.button-container.header-mode {
-  position: fixed;
-  top: 0;
-  left: 50%; /* keep horizontal center */
-  width: 100vw;
-  transform: translateX(-50%); /* horizontal centering */
-  justify-content: center;
-  align-items: center;
-  padding: 18px 0 7px 0;
-  /* background: #1963d9; */
-  border-radius: 10px;
-  box-shadow: 0 2px 16px rgba(10,40,99,0.10);
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 999;
-}
+
+/* Business page */
 
 .page-header {
   display: flex;
@@ -227,148 +213,11 @@ button:active:not(.gallery-arrow) {
   padding: 18px 0 7px 0;
   background: #001455;
   z-index: 999;
-}
-
-
-/* Business page */
-
-.panel-row {
-  margin-top: 5vh;
-  display: flex;
-  height: 95vh;
-  width: 100vw;
-  box-sizing: border-box;
-  padding: 40px;
-  gap: 0;
-}
-.panel {
-  background: #004f9f;
-  color: #b8a55c;
-  flex: 1 1 0;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  margin: 0 2px;
-  overflow: hidden;
-  transition: flex-basis 0.7s cubic-bezier(.85,0,.17,1), filter 0.3s;
-  border: 1px solid #fbff00;
-  position: relative;
-  cursor: pointer;
-}
-.panel:not(.active) {
-  flex-basis: 5vw !important;
-  filter: grayscale(0.2) brightness(0.7);
-  z-index: 1;
-}
-.panel.active {
-  flex-basis: 55vw;
-  filter: none;
-  z-index: 10;
-  cursor: default;
-}
-.panel.active.featured{
-  flex-basis: 70vw;
-}
-.panel-inner {
-  padding: 2.7em 2.7em 1.4em 2.7em;
-  width: 100%;
-  max-height: 100vh;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-.panel:not(.active) .panel-inner {
-  opacity: 0.1;
-  pointer-events: none;
-  transition: opacity 0.28s;
-}
-.panel-title {
-  font-size: 3em;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #b8a55c;
-  font-family: "Petit Formal Script", cursive;
-}
-.panel-number {
-  position: absolute;
-  top: 1.4em;
-  right: 2em;
-  font-size: 2.3em;
-  font-weight: 600;
-  color: #ffcc00;
-  text-shadow: #222;
-  font-family: "Petit Formal Script", cursive;
-}
-.img-box {
-  height: 30vh;
-  border-radius: 8px;
-  margin-bottom: 1.6em;
-}
-.img-box img {
-  /* width: 100%; */
-  height: 100%;
-  align-self: baseline;
-  object-fit:contain;
-  border-radius: 8px;
-}
-.desc-primary {
-  font-size: 2.1em;
-  color: #d7c070;
-  line-height: 1.13em;
-  font-weight: 500;
-  margin-bottom: 7px;
-}
-.desc-secondary {
-  margin-top: 3px;
-  font-size: 1.5em;
-  /* font-weight: 600; */
-  color: #000000;
-  margin-bottom: 1.9em;
-}
-.mini-link {
-  color: #b8a55c;
-  text-decoration: none;
-  opacity: 0.73;
-  display: inline-block;
-  margin-bottom: 0.9em;
-  font-size: 1em;
-}
-.mini-link:hover {
-  color: #fff8c1;
-  opacity: 1.0;
-  text-decoration: underline;
-  font-style: italic;
-}
-.panel.featured {
-  background: #fdff92;
-  color: #222;
-  border: 1.9px solid #fbff00;
-}
-.panel.featured .panel-inner {
-  color: #333;
-}
-.panel.featured .panel-title,
-.panel.featured .panel-number,
-.panel.featured .desc-primary,
-.panel.featured .mini-link {
-  color: #222 !important;
-}
-@media (max-width: 900px) {
-  .panel-row { padding: 0; }
-  .panel-inner { padding: 1em 1em;}
-}
-
-.image-gallery {
-  position: relative;
-  width: 100%;
-  margin-top: 1.5em;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.gallery-img {
-  width: 100%;
-  object-fit:contain;
-  border-radius: 8px;
-  display: block;
+  border-bottom:solid 5px #3857bb;
+  box-shadow: 
+    rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
