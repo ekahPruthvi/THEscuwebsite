@@ -14,12 +14,11 @@
   <link rel="icon" type="image/x-icon" href="/images/logo/SCUfavicon.svg">
   <style>
     body {
-      /* background: #004f9f; */
       margin: 0;
       padding: 0;
       height: 100vh;
       font-family: 'Inter', Arial, sans-serif;
-      overflow: hidden;
+      overflow-x: auto;
       --color1: #00366b;
       --color2: #004080;
       background-color: var(--color1);
@@ -27,6 +26,18 @@
                         linear-gradient(45deg, var(--color2) 25%, var(--color1) 25%, var(--color1) 75%, var(--color2) 75%, var(--color2));
       background-size: 60px 60px;
       background-position: 0 0, 30px 30px;
+    }
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #001c38;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #004a94;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0060c0;
     }
   </style>
 </head>
@@ -53,7 +64,21 @@
     </span>
   </button>
 </div>
-
+<div class="quflex">
+  <h1 class="qheading">
+    Quote.
+  </h1>
+  <div class="qsub">
+    ' The easy, accessible and fast billing and quotation solution! '
+  </div>
+  <div class="qwindow" id="window">
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+    <div class="div5">5</div>
+  </div>
+</div>
 <script src="/business/script.js"></script>
 </body>
 </html>

@@ -198,10 +198,8 @@ button:active:not(.gallery-arrow) {
 
 .page-header {
   display: flex;
-  justify-content: space-between;
   position: absolute;
   transform: translate(-50%, -50%);
-  display: flex;
   gap: 24px;
   top: 0;
   left: 0;
@@ -220,4 +218,86 @@ button:active:not(.gallery-arrow) {
     rgba(0, 0, 0, 0.12) 0px 4px 6px, 
     rgba(0, 0, 0, 0.17) 0px 12px 13px, 
     rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.quflex{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+}
+
+.qheading{
+  margin-top: 10%;
+  font-family: "League Script", cursive;
+  font-size: 15vh;
+  color: rgb(0, 112, 112);
+  --stroke: rgba(255, 228, 77, 0.075);
+  --stroke_ac: rgba(255, 228, 77, 1);
+  text-shadow:
+    -100px -200px 0 var(--stroke),
+    100px -50px 0 var(--stroke),
+    500px 100px 0 var(--stroke),
+    -600px 200px 0 var(--stroke);
+  -webkit-text-stroke: 20px var(--stroke_ac);
+  paint-order: stroke fill;
+  rotate: -3deg;
+}
+
+.qsub{
+  font-size: 2vh;
+  margin-top: -2%;
+  color: rgba(255, 228, 77, 1);
+  font-family: "Petit Formal Script", cursive;
+}
+
+.qwindow{
+  height: 70vh;
+  width: 70vw;
+  background: linear-gradient(0deg, #a34266, #000000);
+  margin-top: 20vh;
+  font-size: 8vh;
+  margin-bottom: 30vh;
+  border-radius: 20px;
+  padding: 20px;
+  border: 10px solid rgb(97, 97, 97);
+  box-shadow: 
+    rgba(187, 0, 0, 0.25) 0px 54px 55px, 
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.div1 {
+  grid-row: span 5 / span 5;  
+}
+
+.div2 {
+  grid-column: span 3 / span 3;
+}
+
+.div3 {
+  grid-column: span 3 / span 3;
+  grid-row: span 3 / span 3;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.div4 {
+  grid-column: span 3 / span 3;
+  grid-column-start: 2;
+  grid-row-start: 5;
+}
+
+.div5 {
+  grid-row: span 5 / span 5;
+  grid-column-start: 5;
+  grid-row-start: 1;
 }
