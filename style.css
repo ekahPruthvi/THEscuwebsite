@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bitcount+Prop+Double:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mansalva&display=swap');
+
 html, body {
   margin: 0;
   padding: 0;
@@ -231,6 +233,7 @@ button:active:not(.gallery-arrow) {
 .qheading{
   margin-top: 10%;
   font-family: "League Script", cursive;
+  font-weight: 900;
   font-size: 15vh;
   color: rgb(0, 112, 112);
   --stroke: rgba(255, 228, 77, 0.075);
@@ -243,6 +246,16 @@ button:active:not(.gallery-arrow) {
   -webkit-text-stroke: 20px var(--stroke_ac);
   paint-order: stroke fill;
   rotate: -3deg;
+}
+
+.qheading::selection{
+  background-color: #3d9eff;
+  text-decoration: underline 2px black;
+}
+
+.qheading::-moz-selection {
+  background-color: #3d9eff;
+  text-decoration: underline 2px black;
 }
 
 .qsub{
@@ -258,12 +271,12 @@ button:active:not(.gallery-arrow) {
   background: linear-gradient(0deg, #a34266, #000000);
   margin-top: 20vh;
   font-size: 8vh;
-  margin-bottom: 30vh;
+  margin-bottom: 5vh;
   border-radius: 20px;
   padding: 20px;
   border: 10px solid rgb(97, 97, 97);
   box-shadow: 
-    rgba(187, 0, 0, 0.25) 0px 54px 55px, 
+    rgba(187, 0, 0, 0.116) 0px 54px 55px, 
     rgba(0, 0, 0, 0.12) 0px -12px 30px, 
     rgba(0, 0, 0, 0.12) 0px 4px 6px, 
     rgba(0, 0, 0, 0.17) 0px 12px 13px, 
@@ -300,4 +313,110 @@ button:active:not(.gallery-arrow) {
   grid-row: span 5 / span 5;
   grid-column-start: 5;
   grid-row-start: 1;
+}
+
+.bigwintxt{
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+.centerd{
+  align-self: center;
+  text-align: center;
+}
+
+.vert{
+  display: flex;
+  flex-direction: column;
+}
+
+.upinp{
+  background-color: rgba(32, 32, 32, 0.88);
+  border-radius: 20px 20px 0px 0px;
+  border: 5px solid rgba(187, 187, 187, 0.13);
+  padding: 15px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  width: 300px;
+  align-self: center;
+}
+
+.downinp{
+  background-color: rgba(32, 32, 32, 0.88);
+  border-radius: 0px 0px 20px 20px;
+  border: 5px solid rgba(187, 187, 187, 0.13);
+  border-top: none;
+  padding: 15px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  width: 300px;
+  align-self: center;
+}
+
+
+.custbtn{
+  all: unset;
+  background-color: rgba(67, 255, 123, 0.8);
+  border-radius: 15px;
+  border: 2px solid rgba(67, 255, 123, 1);
+  padding: 15px;
+  margin: 10px;
+  color: rgba(255, 255, 255, 1);
+  font-size: 20px;
+  width: 280px;
+  align-self: center;
+}
+
+.custbtn:hover{
+  background-color: rgba(42, 212, 93, 0.8);
+}
+
+.foottxt{
+  align-self: flex-end;
+  font-size: 12px;
+  text-align: center;
+}
+
+.arrowtxt{
+  color: white;
+  font-family: "Mansalva", sans-serif;
+  font-size: 5vh;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 10vh;
+}
+
+.arw{
+  margin-left: 30vw;
+}
+
+.hiddenw{
+  display: none;
+}
+
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.toast {
+  background: #fff018;
+  color: #003e70;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  font-family: "Mansalva", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }
