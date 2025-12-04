@@ -54,6 +54,11 @@ const mail = document.getElementById('mai');
 const cards = document.querySelectorAll('.card');
 const genbtn = document.getElementById('gen');
 const genbtn1 = document.getElementById('gen1');
+const back = document.getElementById('back_btn');
+const bill_btn = document.getElementById('nono');
+const new_card = document.getElementById('place_card');
+let flag_srch = true;
+let back_flag = true;
 
 custBtn.addEventListener('click', () => {
   if (custBtn.textContent.trim() === 'Search') {
@@ -65,9 +70,42 @@ custBtn.addEventListener('click', () => {
     mail.textContent = "Mail: " + nameinp + "@mail.ye"
     window1.classList.add('hiddenw');
     window2.classList.remove('hiddenw');
-    showToast('Quote searches the database (very quickly) and findes your customer.');
+    if (flag_srch === true){
+      showToast('Quote searches the database (very quickly) and findes your customer.');
+      flag_srch = false;
+    }
   } else {
     showToast('That button is not a part of your expirence yet :(', 3000);
+  }
+});
+
+back.addEventListener('click', () => {
+  window2.classList.add('hiddenw');
+  window1.classList.remove('hiddenw');
+  if (back_flag === true){
+    showToast('Back button takes you back to the Home page', 3000);
+    back_flag = false;
+  }
+});
+
+nono.addEventListener('click', () => {
+  showToast('All The generated bills for this customer will be stored in BILL', 3000);
+});
+
+genbtn.addEventListener('click', () => {
+  if (new_card.classList.contains('sel_q')){
+    showToast('ok');
+  } else if (genbtn.classList.contains('sel')) {
+    showToast('Quote will show the previously generated quotation for this customer', 5000);
+    setTimeout(() => {
+      showToast('But We suggest you to create a new one by using the (+) button');
+    }, 3000);
+  }
+});
+
+genbtn1.addEventListener('click', () => {
+  if (genbtn1.classList.contains('sel')) {
+  showToast('Oops, this button isn’t active in your setup right now :(', 3000);
   }
 });
 
@@ -86,7 +124,7 @@ cards.forEach(card => {
   });
 });
 
-function showToast(message, duration = 5000) {
+function showToast(message, duration = 6000) {
   const container = document.getElementById('toast-container');
 
   const toast = document.createElement('div');

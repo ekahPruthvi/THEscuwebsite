@@ -441,6 +441,7 @@ button:active:not(.gallery-arrow) {
   border-radius: 10px;
   text-align: center;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .panel_btn:hover {
