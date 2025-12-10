@@ -514,7 +514,6 @@ button:active:not(.gallery-arrow) {
   background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
       linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
   background-size: 55px 55px;
-  padding-bottom: 20px;
 }
 
 .whytxt {
@@ -571,4 +570,35 @@ button:active:not(.gallery-arrow) {
   font-weight: normal;
   text-decoration: none;
   font-style: normal;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10vh;
+  margin-top: 50px;
+  font-family: "Mansalva", sans-serif;
+  font-size: 3em;
+  color: #f5deb3;
+}
+
+
+
+.cont .heref {
+  color: #ffdd57;
+  text-decoration: underline;
+}
+
+.heref:hover {
+  font-style: italic;
+}
+
+.foot {
+  width: 100vw;
+  height: 30vh;
+  background-color: #001455;
+  padding: 50px;
+  padding-left: 10vw;
+  color: #cccccc;
 }
