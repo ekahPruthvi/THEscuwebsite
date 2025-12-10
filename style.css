@@ -228,6 +228,7 @@ button:active:not(.gallery-arrow) {
   flex-direction: column;
   align-items: center;
   min-height: 0;
+  overflow-x: hidden;
 }
 
 .qheading{
@@ -497,4 +498,77 @@ button:active:not(.gallery-arrow) {
 
 .sel_q {
   border: 5px solid white;
+}
+
+.whysection {
+  background-color: rgb(250, 255, 180);
+  padding: 10px;
+  width: 90vw;
+  text-align: center;
+  box-shadow:
+  rgb(255, 136, 0) 5px 5px, 
+  rgba(255, 102, 0, 0.767) 10px 10px, 
+  rgba(255, 0, 0, 0.05) 15px 15px;
+  margin-bottom: 50px;
+  --color: #ffae004d;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-size: 55px 55px;
+  padding-bottom: 20px;
+}
+
+.whytxt {
+  font-size: 4em;
+  font-family: "Petit Formal Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+  margin: 50px;
+  font-weight: bold;
+  color: #ff5100;
+  rotate: -6deg;
+}
+
+.whytxt sup {
+  font-size: 0.3em;
+}
+
+.whycardicon {
+  font-size: 0.5em;
+  color: #003e70;
+  margin-bottom: 10px;
+}
+
+.whycard {
+  text-align: start;
+  margin-left: 5em;
+  padding: 20px;
+  font-family: "Mansalva", sans-serif;
+  display: flex;
+  flex-direction: row;
+  font-size: 2em;
+}
+
+.whycard2{
+  text-align: start;
+  margin-right: 5em;
+  padding: 20px;
+  font-family: "Mansalva", sans-serif;
+  display: flex;
+  flex-direction: row;
+  font-size: 2em;
+  justify-content: end;
+}
+
+.whycardtitle{
+  font-weight: bold;
+  font-style: italic;
+  margin-left: 10px;
+}
+
+.whycarddesc{
+  margin-top: 10px;
+  color: #333333;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
 }

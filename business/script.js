@@ -57,6 +57,7 @@ const genbtn1 = document.getElementById('gen1');
 const back = document.getElementById('back_btn');
 const bill_btn = document.getElementById('nono');
 const new_card = document.getElementById('place_card');
+const plus_btn = document.getElementById('plus');
 let flag_srch = true;
 let back_flag = true;
 
