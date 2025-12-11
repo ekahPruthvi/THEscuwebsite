@@ -15,7 +15,7 @@ html, body {
   display: flex;
   position: absolute;
   transform: translate(-50%, -50%);
-  gap: 4px;
+  gap: 2px;
   top: 0;
   left: 0;
   width: 100vw;
@@ -23,7 +23,7 @@ html, body {
   position: fixed;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   background: #001455;
   z-index: 999;
   border-bottom:solid 5px #3857bb;
@@ -135,6 +135,12 @@ button:active:not(.gallery-arrow) {
   grid-row: auto;
 }
 
+.div3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .centerd{
   align-self: center;
   text-align: center;
@@ -154,7 +160,7 @@ button:active:not(.gallery-arrow) {
   padding: 15px;
   color: rgba(255, 255, 255, 1);
   font-size: 18px;
-  width: 300px;
+  width: 50vw;
   align-self: center;
   margin-top: 10px;
 }
@@ -167,7 +173,7 @@ button:active:not(.gallery-arrow) {
   padding: 15px;
   color: rgba(255, 255, 255, 1);
   font-size: 18px;
-  width: 300px;
+  width: 50vw;
   align-self: center;
   margin-bottom: 30px;
 }
@@ -185,7 +191,7 @@ button:active:not(.gallery-arrow) {
   margin: 10px;
   color: rgba(255, 255, 255, 1);
   font-size: 18px;
-  width: 280px;
+  width: 30vw;
 }
 
 /* Footer text in window */
