@@ -83,11 +83,6 @@ button:active:not(.gallery-arrow) {
   color: rgb(0, 112, 112);
   --stroke: rgba(255, 228, 77, 0.075);
   --stroke_ac: rgba(255, 228, 77, 1);
-  text-shadow:
-    -100px -200px 0 var(--stroke),
-    100px -50px 0 var(--stroke),
-    500px 100px 0 var(--stroke),
-    -600px 200px 0 var(--stroke);
   -webkit-text-stroke: 20px var(--stroke_ac);
   paint-order: stroke fill;
   rotate: -3deg;
@@ -267,7 +262,7 @@ button:active:not(.gallery-arrow) {
       linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
   background-size: 55px 55px;
   rotate: -5deg;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .whycard2{
@@ -285,7 +280,7 @@ button:active:not(.gallery-arrow) {
       linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
   background-size: 55px 55px;
   rotate: 5deg;
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 svg {
