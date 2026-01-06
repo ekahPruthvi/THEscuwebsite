@@ -11,6 +11,7 @@ if (!bubbleText) {
   bubble.appendChild(bubbleText);
 }
 
+
 const images = [
   '/images/bg1.png',
   '/images/bg2.png',

@@ -84,20 +84,21 @@ html, body {
 }
 
 .button-container {
-  width: 10vw;
+  width: 50vw;
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  left: 0vw; /* horizontal center starting point */
-  top: 100%;
-  transform: translate(-50%, -50%);
+  /* position: absolute; */
+  /* left: 50vw; */
+  /* top: 70%; */
+  /* transform: translate(-50%, -50%); */
   gap: 24px;
-  transition:
+  /* transition:
     top 0.6s cubic-bezier(.88,.03,.45,.9),
     left 2s cubic-bezier(.88,.03,.45,.9),
     transform 1s cubic-bezier(.88,.03,.45,.9),
     width 1s cubic-bezier(.88,.03,.45,.9),
-    opacity 0.4s;
+    opacity 0.4s; */
+  margin: 50px;
   background: transparent;
   opacity: 0;
   pointer-events: none;

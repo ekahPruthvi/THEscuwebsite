@@ -137,6 +137,7 @@ html, body {
 }
 
 .button-container {
+  font-family: monospace;
   width: 50vw;
   display: flex;
   justify-content: space-between;
