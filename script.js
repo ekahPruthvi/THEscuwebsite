@@ -27,7 +27,7 @@ const allButtons = buttonContainer.querySelectorAll('button');
 
 const urls = [
   'locallink.html',   
-  'cynageos.html',   
+  'cos/cos.html',   
   'business/business.html',   
   'contact.html'       
 ];
