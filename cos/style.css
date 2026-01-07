@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;300;400;500;700;800&display=swap');
+
 .html, body {
     margin: 0;
     padding: 0;
@@ -34,8 +36,9 @@
     top: 30%;
     right: 5%;
     width: 40%;
-    color: beige;
-    font-family: monospace;
+    color: #00ff99;
+    text-shadow: 0 0 5px #00ff99, 0 0 15px #00ff99, 0 0 30px #00ff99;
+    font-family: "Turret Road", monospace;
     font-size: 2em;
     text-align: left;
 }
@@ -43,10 +46,83 @@
 .lil-right{
     position: absolute;
     top: 50%;
+    left: 5%;
+    width: 40%;
+    color: #00ff99;
+    text-shadow: 0 0 5px #00ff99, 0 0 15px #00ff99, 0 0 30px #00ff99;
+    font-family: "Turret Road", monospace;
+    font-size: 1.2em;
+    text-align: left;
+}
+
+.lil-more-right{
+    position: absolute;
+    top: 70%;
     right: 5%;
     width: 40%;
-    color: beige;
-    font-family: monospace;
-    font-size: 1.2em;
+    color: #00ff99;
+    text-shadow: 0 0 5px #00ff99, 0 0 15px #00ff99, 0 0 30px #00ff99;
+    font-family: "Turret Road", monospace;
+    font-size: 1.8em;
     text-align: right;
+}
+
+.lil-lil-more-right{
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    width: 40%;
+    color: #00ff99;
+    text-shadow: 0 0 5px #00ff99, 0 0 15px #00ff99, 0 0 30px #00ff99;
+    font-family: "Turret Road", monospace;
+    font-size: 2em;
+    text-align: left;
+}
+
+.lil-lil-lil-more-right{
+    position: absolute;
+    top: 70%;
+    left: 15%;
+    width: 40%;
+    color: #00ff99;
+    text-shadow: 0 0 5px #00ff99, 0 0 15px #00ff99, 0 0 30px #00ff99;
+    font-family: "Turret Road", monospace;
+    font-size: 2em;
+    text-align: left;
+}
+
+.final{
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    width: 40vw;
+    color: #00ff99;
+    text-shadow: 0 0 5px #00ff99, 0 0 15px #00ff99, 0 0 30px #00ff99;
+    font-family: "Turret Road", monospace;
+    font-size: 3em;
+    text-align: center;
+}
+
+.hero2{
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: right;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #000000;
+}
+::-webkit-scrollbar-thumb {
+    background: #14532d;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(44, 185, 100);
+    box-shadow: 0 0 5px #00ff99, 0 0 15px #00ff99, 0 0 30px #00ff99;
 }
