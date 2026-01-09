@@ -1,6 +1,4 @@
-window.addEventListener('load', function() {
-  this.document.getElementById('load').style.visibility = 'hidden';
-});
+
 
 function typeWriter(text, speed, elementId) {
     const element = document.getElementById(elementId);
@@ -44,3 +42,27 @@ setTimeout(() => {
     this.document.getElementById('five').style.visibility = 'hidden';
     typeWriter("Rules Break", 50, "six");
 }, 29000);
+
+
+
+setTimeout(() => {
+    const element = document.getElementById('secondpage');
+    const caps = document.querySelector('.noticapsule');
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        caps.style.visibility = 'visible';  
+    }
+}, 32000);
+
+let flag = true;
+document.addEventListener("scroll", (event) => {
+    if (flag) {
+        const element = document.getElementById('secondpage');
+        const caps = document.querySelector('.noticapsule');
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            caps.style.visibility = 'visible';  
+        }
+    }
+    flag = false;
+});
