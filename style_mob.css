@@ -165,7 +165,7 @@ button:not(.gallery-arrow) {
     inset 1px 1px #fff,
     inset -2px -2px rgb(158, 158, 158),
     inset 2px 2px #ffffff;
-  font-size: 1.2vh;
+  font-size: 1vh;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 30px 20px;
