@@ -24,7 +24,6 @@ html, body {
   pointer-events: none;
   width: 20px;
   height: 20px;
-  border-radius: 30%; 
   background: rgba(255, 255, 255, 0.15);
   border-radius: 40px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
@@ -76,7 +75,10 @@ html, body {
     inset 2px 2px #ffffff;
   outline: 1px dashed rgb(37, 37, 37);
   outline-offset: -4px;
-  height: 30vh;
+  min-height: 30vh;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
   position: relative;
 }
 
@@ -132,27 +134,30 @@ html, body {
   font-family: "Petit Formal Script", cursive;
   font-weight: 400;
   font-style: normal;
-  margin: 50px;
+  margin: clamp(15px, 5vh, 50px) clamp(15px, 5vw, 50px);
   color: #000000;
 }
 
 .button-container {
   font-family: monospace;
-  width: 50vw;
+  width: min(50vw, 100%);
+  max-width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   /* position: absolute; */
   /* left: 50vw; */
   /* top: 70%; */
   /* transform: translate(-50%, -50%); */
-  gap: 24px;
+  gap: 16px 24px;
   /* transition:
     top 0.6s cubic-bezier(.88,.03,.45,.9),
     left 2s cubic-bezier(.88,.03,.45,.9),
     transform 1s cubic-bezier(.88,.03,.45,.9),
     width 1s cubic-bezier(.88,.03,.45,.9),
     opacity 0.4s; */
-  margin: 50px;
+  margin: clamp(15px, 5vh, 50px) clamp(15px, 5vw, 50px);
+  box-sizing: border-box;
   background: transparent;
   opacity: 0;
   pointer-events: none;
@@ -179,7 +184,9 @@ button:not(.gallery-arrow) {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 10px 30px;
-  width: 180px;
+  flex: 1 1 140px;
+  max-width: 180px;
+  min-width: 0;
 }
 
 button:active:not(.gallery-arrow) {

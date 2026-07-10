@@ -41,6 +41,7 @@ allButtons.forEach((btn, i) => btn.addEventListener('click', () => {
   setTimeout(() => {
 
   allButtons.forEach(b => b.disabled = false);
+    document.body.classList.remove('border-effect');
     window.location.href = urls[i];
   }, 1200);
 }));
