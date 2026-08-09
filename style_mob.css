@@ -125,7 +125,7 @@ html, body {
 }
 
 .us-text {
-  font-size: 1.3vh;
+  font-size: clamp(15px, 4.5vw, 20px); /* was 1.3vh - nearly invisible on phones */
   font-family: "Petit Formal Script", cursive;
   font-weight: 400;
   font-style: normal;
@@ -165,10 +165,10 @@ button:not(.gallery-arrow) {
     inset 1px 1px #fff,
     inset -2px -2px rgb(158, 158, 158),
     inset 2px 2px #ffffff;
-  font-size: 1vh;
+  font-size: 14px; /* was 1vh - unreadably tiny on phones */
   text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 30px 20px;
+  letter-spacing: 1.5px;
+  padding: 18px 20px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -193,13 +193,14 @@ button:active:not(.gallery-arrow) {
 .page-header {
   display: flex;
   position: fixed;
-  gap: 12px;
+  flex-wrap: nowrap;
+  gap: 6px;
   top: 0;
   left: 0;
   width: 100vw;
   justify-content: center;
-  align-items: center;
-  padding: 12px 0 6px 0;
+  align-items: stretch;
+  padding: 10px 8px 6px 8px;
   background: #001455;
   z-index: 999;
   border-bottom: solid 4px #3857bb;
@@ -210,8 +211,28 @@ button:active:not(.gallery-arrow) {
   box-sizing: border-box;
 }
 
+/* the shared button style above is written for full-width stacked
+   buttons on the home page; the header needs its own compact,
+   equal-width nav buttons so 4 of them fit on one row without
+   overflowing the screen */
+.page-header button {
+  width: auto;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 10px 4px;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+}
+
+.page-header button span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .quflex {
-  margin-top: 30px;
+  margin-top: 76px; /* clears the fixed .page-header, which "margin-top: 30px" left content tucked under */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -255,7 +276,7 @@ button:active:not(.gallery-arrow) {
 .qwindow {
   height: auto;
   width: 100%;
-  margin-top: 10vh;
+  margin-top: 4vh;
   font-size: 1.4em;
   margin-bottom: 5vh;
   border-radius: 16px;
@@ -518,30 +539,40 @@ button:active:not(.gallery-arrow) {
 }
 
 .whycard {
-  text-align: start;
-  margin-left: 1em;
+  text-align: center;
+  margin-left: 0;
   padding: 12px;
   font-family: "Mansalva", sans-serif;
   display: flex;
-  flex-direction: row;
-  font-size: 1.2em;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1em;
 }
 
 .whycard2 {
-  text-align: start;
-  margin-right: 1em;
+  text-align: center;
+  margin-right: 0;
   padding: 12px;
   font-family: "Mansalva", sans-serif;
   display: flex;
-  flex-direction: row;
-  font-size: 1.2em;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.1em;
   justify-content: flex-start;
+}
+
+/* the whycard icons are inline SVGs hardcoded up to 278px wide in the
+   markup - cap them so they don't crowd out the text on a phone screen */
+.whycardicon svg {
+  width: 100%;
+  height: auto;
+  max-width: 110px;
 }
 
 .whycardtitle {
   font-weight: bold;
   font-style: italic;
-  margin-left: 8px;
+  margin-left: 0;
 }
 
 .whycarddesc {
@@ -556,12 +587,81 @@ button:active:not(.gallery-arrow) {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 18px;
   margin-bottom: 6vh;
   margin-top: 30px;
   font-family: "Mansalva", sans-serif;
-  font-size: 1.8em;
   color: #f5deb3;
   text-align: center;
+}
+
+.price-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.price-headline {
+  font-size: 1.6em;
+}
+
+.price-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  width: 100%;
+}
+
+.price-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.price-group-title {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  color: rgba(245, 222, 179, 0.65);
+}
+
+.price-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 12px;
+}
+
+.price-tag {
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  border: 2px solid rgba(245, 222, 179, 0.5);
+  border-radius: 999px;
+  padding: 6px 14px;
+  background: rgba(245, 222, 179, 0.08);
+  white-space: nowrap;
+}
+
+.price-tag em {
+  font-style: italic;
+  opacity: 0.75;
+}
+
+.pricing .cont {
+  font-size: 1.1em;
+  margin-top: 2px;
+}
+
+.pricing svg {
+  max-width: 85vw;
+  height: auto;
 }
 
 .cont .heref {

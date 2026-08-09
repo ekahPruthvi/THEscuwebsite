@@ -6,7 +6,7 @@ const urls = [
   'locallink.html',   
   'cynageos.html',   
   '/index.html#text2',   
-  'contact.html'       
+  '/contact.html'       
 ];
 
 function activatePanel(panel) {

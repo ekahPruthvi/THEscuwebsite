@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Contact — Source</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-base: #dcd4c5;
+    --blob-pink: #f3a0c6;
+    --blob-orange: #f5934f;
+    --blob-lav: #b48cdb;
+    --blob-teal: #7fb9c9;
+
+    --chassis-hi: #f1ebdd;
+    --chassis-lo: #d7cebb;
+    --chassis-shadow: #a89c86;
+
+    --bezel: #17151a;
+    --screen-a: #2c2856;
+    --screen-b: #7a3f74;
+    --screen-c: #d6603f;
+
+    --ink: #211f1a;
+    --ink-soft: #55503f;
+    --paper: #f6f1e6;
+    --accent: #d9552f;
+
+    --radius-chassis: 30px;
+    --radius-screen: 10px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    min-height:100%;
+    background: var(--bg-base);
+    color: var(--ink);
+    font-family: "Inter", Arial, sans-serif;
+    overflow-x:hidden;
+  }
+
+  /* ---------- ambient background ---------- */
+  .bg{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+    background: var(--bg-base);
+  }
+  .blob{
+    position:absolute;
+    border-radius:50%;
+    filter: blur(90px);
+    opacity:.65;
+    will-change: transform;
+  }
+  .blob.b1{ width:46vw; height:46vw; left:-14vw; top:-10vw; background: var(--blob-orange); animation: drift1 26s ease-in-out infinite; }
+  .blob.b2{ width:50vw; height:50vw; right:-18vw; top:6vw; background: var(--blob-pink); animation: drift2 32s ease-in-out infinite; }
+  .blob.b3{ width:40vw; height:40vw; right:-10vw; bottom:-16vw; background: var(--blob-lav); animation: drift1 30s ease-in-out infinite reverse; }
+  .blob.b4{ width:30vw; height:30vw; left:6vw; bottom:-14vw; background: var(--blob-teal); opacity:.45; animation: drift2 24s ease-in-out infinite reverse; }
+
+  @keyframes drift1{
+    0%,100%{ transform: translate(0,0) scale(1); }
+    50%{ transform: translate(3vw,2vw) scale(1.06); }
+  }
+  @keyframes drift2{
+    0%,100%{ transform: translate(0,0) scale(1); }
+    50%{ transform: translate(-2.5vw,3vw) scale(1.04); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .blob{ animation: none !important; }
+  }
+
+  /* ---------- layout ---------- */
+  .page{
+    position:relative;
+    z-index:1;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 64px 32px;
+  }
+
+  .composition{
+    width:100%;
+    max-width:1180px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 88px;
+    flex-wrap: wrap;
+  }
+
+  /* ---------- the machine ---------- */
+  .computer{
+    position:relative;
+    width: min(460px, 92vw);
+    flex-shrink:0;
+  }
+
+  .chassis{
+    background: linear-gradient(175deg, var(--chassis-hi), var(--chassis-lo));
+    border-radius: var(--radius-chassis);
+    padding: 30px 30px 40px;
+    box-shadow:
+      0 46px 90px -30px rgba(35,26,12,.45),
+      0 6px 0 var(--chassis-shadow),
+      inset 0 2px 0 rgba(255,255,255,.7);
+  }
+
+  .bezel{
+    background: var(--bezel);
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 10px 24px rgba(0,0,0,.5);
+  }
+
+  .screen{
+    position:relative;
+    border-radius: var(--radius-screen);
+    overflow:hidden;
+    aspect-ratio: 4 / 3.05;
+    background:
+      radial-gradient(120% 90% at 15% 0%, rgba(255,255,255,.10), transparent 55%),
+      linear-gradient(155deg, var(--screen-a) 0%, var(--screen-b) 52%, var(--screen-c) 100%);
+    display:flex;
+    flex-direction:column;
+    padding: 22px 22px 18px;
+  }
+
+  .screen::after{
+    /* scanline sheen */
+    content:"";
+    position:absolute;
+    inset:0;
+    background: repeating-linear-gradient(
+      180deg,
+      rgba(0,0,0,0) 0px,
+      rgba(0,0,0,0) 2px,
+      rgba(0,0,0,.05) 3px
+    );
+    pointer-events:none;
+  }
+
+  .term-head{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .12em;
+    color: rgba(255,255,255,.55);
+    display:flex;
+    justify-content:space-between;
+    margin-bottom: 16px;
+  }
+  .term-head .dot{ color: rgba(255,255,255,.4); }
+
+  form.term-form{
+    display:flex;
+    flex-direction:column;
+    gap: 12px;
+    flex: 1;
+  }
+
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+
+  .field label{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: .14em;
+    color: rgba(255,255,255,.6);
+  }
+
+  .field .row{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    border-bottom: 1px solid rgba(255,255,255,.28);
+    padding-bottom: 6px;
+  }
+
+  .field input,
+  .field textarea{
+    flex:1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fbf7ee;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 13px;
+    resize: none;
+    caret-color: #fbf7ee;
+  }
+  .field input::placeholder,
+  .field textarea::placeholder{
+    color: rgba(255,255,255,.32);
+  }
+
+  .field textarea{ height: 34px; padding-top: 2px; line-height:1.4; }
+
+  .cursor{
+    width: 7px;
+    height: 13px;
+    background: #fbf7ee;
+    animation: blink 1s step-end infinite;
+    flex-shrink:0;
+  }
+  @media (prefers-reduced-motion: reduce){ .cursor{ animation:none; opacity:.6; } }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .send-row{
+    margin-top: 4px;
+    display:flex;
+    justify-content:flex-start;
+  }
+
+  .send-btn{
+    font-family:"Inter", sans-serif;
+    font-weight:600;
+    font-size: 11px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: #fbf7ee;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 20px;
+    cursor:pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .send-btn:hover{ transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,.25); }
+  .send-btn:active{ transform: translateY(0); }
+  .send-btn:focus-visible{ outline: 2px solid #fbf7ee; outline-offset: 3px; }
+
+  .sent-note{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: .05em;
+    color: #fbf7ee;
+    opacity:0;
+    transform: translateY(4px);
+    transition: opacity .3s ease, transform .3s ease;
+    margin-top: 2px;
+  }
+  .sent-note.show{ opacity:.85; transform: translateY(0); }
+
+  /* underside: disk slot + logo */
+  .underside{
+    margin-top: 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap: 16px;
+  }
+
+  .badge{
+    width: 40px;
+    height: 40px;
+    border-radius:50%;
+    background: var(--paper);
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.08), 0 2px 3px rgba(0,0,0,.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+  }
+
+  .disk-slot{
+    flex:1;
+    height: 30px;
+    max-width: 240px;
+    background: linear-gradient(180deg, #0f0e12, #1c1a20);
+    border-radius: 6px;
+    position:relative;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,.6), inset 0 -1px 0 rgba(255,255,255,.05);
+  }
+  .disk-slot::after{
+    content:"";
+    position:absolute;
+    left: 10%;
+    right: 10%;
+    top: 50%;
+    height: 2px;
+    background: rgba(255,255,255,.18);
+    transform: translateY(-50%);
+  }
+
+  /* ---------- copy block ---------- */
+  .copy{
+    max-width: 420px;
+  }
+
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 12px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom: 18px;
+  }
+  .eyebrow .ping{
+    width:6px; height:6px; border-radius:50%;
+    background: var(--accent);
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.25; } }
+  @media (prefers-reduced-motion: reduce){ .eyebrow .ping{ animation:none; } }
+
+  h1{
+    font-family:"Fraunces", serif;
+    font-weight: 500;
+    font-size: clamp(34px, 4.4vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    margin: 0 0 20px;
+    color: var(--ink);
+  }
+  h1 em{
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ink-soft);
+  }
+
+  .lede{
+    font-size: 16px;
+    line-height:1.6;
+    color: var(--ink-soft);
+    margin: 0 0 28px;
+  }
+
+  .contact-links{
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 13px;
+  }
+
+  .contact-links a{
+    color: var(--ink);
+    text-decoration:none;
+    border-bottom: 1px solid rgba(33,31,26,.25);
+    padding-bottom: 1px;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  .contact-links a:hover{ border-color: var(--accent); color: var(--accent); }
+  .contact-links a:focus-visible{ outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .elsewhere{
+    margin-top: 26px;
+    display:flex;
+    gap: 14px;
+    font-family:"IBM Plex Mono", monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .elsewhere a{ color: var(--ink-soft); text-decoration:none; border-bottom:1px solid rgba(85,80,63,.3); }
+  .elsewhere a:hover{ color: var(--accent); border-color: var(--accent); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 860px){
+    .composition{ flex-direction: column-reverse; gap: 48px; }
+    .copy{ max-width: 480px; text-align:center; }
+    .eyebrow{ justify-content:center; }
+    .contact-links{ align-items:center; }
+    .elsewhere{ justify-content:center; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="bg" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="blob b4"></div>
+  </div>
+
+  <div class="page">
+    <div class="composition">
+
+      <!-- retro machine with a working terminal-style contact form -->
+      <div class="computer">
+        <div class="chassis">
+          <div class="bezel">
+            <div class="screen">
+              <div class="term-head">
+                <span>NEW_MESSAGE.TXT</span>
+                <span class="dot">●</span>
+              </div>
+
+              <form class="term-form" id="contactForm">
+                <div class="field">
+                  <label for="f-name">NAME</label>
+                  <div class="row">
+                    <input id="f-name" name="name" type="text" placeholder="Jane Doe" autocomplete="name" required />
+                    <span class="cursor" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="f-email">EMAIL</label>
+                  <div class="row">
+                    <input id="f-email" name="email" type="email" placeholder="jane@studio.com" autocomplete="email" required />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="f-message">MESSAGE</label>
+                  <div class="row">
+                    <textarea id="f-message" name="message" placeholder="Tell us what you're building..." required></textarea>
+                  </div>
+                </div>
+
+                <div class="send-row">
+                  <button class="send-btn" type="submit">Send message</button>
+                </div>
+                <div class="sent-note" id="sentNote">Message received — we'll reply within one business day.</div>
+              </form>
+            </div>
+          </div>
+
+          <div class="underside">
+            <div class="badge" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="9.2" fill="none" stroke="#e7e0d0" stroke-width="0.6"/>
+                <path d="M10 10 L10 1.2 A8.8 8.8 0 0 1 16.2 3.8 Z" fill="#d9552f"/>
+                <path d="M10 10 L16.2 3.8 A8.8 8.8 0 0 1 16.2 16.2 Z" fill="#7fb9c9"/>
+                <path d="M10 10 L16.2 16.2 A8.8 8.8 0 0 1 3.8 16.2 Z" fill="#b48cdb"/>
+                <path d="M10 10 L3.8 16.2 A8.8 8.8 0 0 1 3.8 3.8 Z" fill="#f3a0c6"/>
+                <path d="M10 10 L3.8 3.8 A8.8 8.8 0 0 1 10 1.2 Z" fill="#f5934f"/>
+              </svg>
+            </div>
+            <div class="disk-slot" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- headline / contact details -->
+      <div class="copy">
+        <div class="eyebrow"><span class="ping"></span>Get in touch</div>
+        <h1>Let's start<br><em>the conversation.</em></h1>
+        <p class="lede">
+          Questions about the platform, a partnership idea, or just want to say hello —
+          type it into the terminal and we'll get back to you within one business day.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:hello@source.design">hello@source.design</a>
+          <a href="tel:+18005550142">+1 (800) 555-0142</a>
+        </div>
+        <div class="elsewhere">
+          <a href="#">X</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const note = document.getElementById('sentNote');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      note.classList.add('show');
+      form.querySelector('.send-btn').textContent = 'Sent ✓';
+      setTimeout(() => {
+        form.querySelector('.send-btn').textContent = 'Send message';
+      }, 2400);
+    });
+  </script>
+
+</body>
+</html>
